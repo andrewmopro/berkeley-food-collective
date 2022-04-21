@@ -17,6 +17,10 @@ jobs:
         ruby-version: 3.0.3
         bundler-cache: true
         
+    - name: Get AirTable key
+      run: |
+        gpg --passphrase "$KEY" --output config/application.yml --decrypt config/application.yml.asc
+        
     - name: Setup CodeClimate test-reporter
       run: |
         curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
