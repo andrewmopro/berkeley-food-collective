@@ -29,3 +29,10 @@ https://berkeley-food-collective.herokuapp.com/
 - run `heroku create -a app-name` to create empty application Heroku
 - run `git add .` and `git commit -m "[message]"` to prepare local changes
 - run `git push heroku main` to push the code to Heroku
+
+## Some Dependencies
+
+- This app heavily relies on Airtable integration. The `airtable` gem is used to make API calls to Airtable https://github.com/Airtable/airtable-ruby
+- This is the recipe used to manage the API key http://saasbook.github.io/courseware/devops/managing-api-keys.html
+- The `figaro` gem is used to securely store an Airtable API key and access it as the environment variable `airtable_api_key` https://github.com/laserlemon/figaro
+- The passphrase to decrypt `config/application.yml.asc` is stored as a Github secret in the golden repository. The unencrypted file may be needed to run the app locally  
